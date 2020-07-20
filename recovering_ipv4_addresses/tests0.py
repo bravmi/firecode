@@ -1,4 +1,4 @@
-from .solve_alt import *
+from .solve0 import *
 
 
 def test1():
