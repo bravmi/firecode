@@ -2,7 +2,7 @@ from .solve import *
 
 
 def test0():
-    assert look_and_say(0) == None
+    assert look_and_say(0) is None
 
 
 def test1():

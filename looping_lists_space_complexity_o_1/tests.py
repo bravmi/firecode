@@ -9,7 +9,7 @@ def test5():
     node1.next = node2
 
     lst = SinglyLinkedList(node1)
-    assert lst.is_cyclic() == True
+    assert lst.is_cyclic() is True
 
 
 def test4():
@@ -19,4 +19,4 @@ def test4():
     node1 = Node(1, node2)
 
     lst = SinglyLinkedList(node1)
-    assert lst.is_cyclic() == False
+    assert lst.is_cyclic() is False

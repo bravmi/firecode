@@ -16,7 +16,7 @@ def test1():
 
     lst = SinglyLinkedList()
     lst.head = node1
-    assert lst.is_list_even() == True
+    assert lst.is_list_even() is True
 
 
 def test2():
@@ -37,4 +37,4 @@ def test2():
 
     lst = SinglyLinkedList()
     lst.head = node1
-    assert lst.is_list_even() == False
+    assert lst.is_list_even() is False

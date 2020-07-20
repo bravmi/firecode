@@ -7,7 +7,7 @@ def test1():
         ['D', 'E', 'L'],
         ['G', 'H', 'I'],
     ]
-    assert boggle_search(board, 'HELLO') == True
+    assert boggle_search(board, 'HELLO') is True
 
 
 def test2():
@@ -19,13 +19,13 @@ def test2():
         ['O', 'D', 'F', 'S'],
         ['D', 'E', 'E', 'E'],
     ]
-    assert boggle_search(board, 'FIRECODE') == True
-    assert boggle_search(board, 'JACKET') == False
-    assert boggle_search(board, 'JACK') == True
-    assert boggle_search(board, 'PREP') == False
-    assert boggle_search(board, 'FIRES') == True
-    assert boggle_search(board, 'DFS') == True
-    assert boggle_search(board, 'ROCKS') == True
-    assert boggle_search(board, 'ROCK') == True
-    assert boggle_search(board, 'AXE') == False
-    assert boggle_search(board, 'SEE') == True
+    assert boggle_search(board, 'FIRECODE') is True
+    assert boggle_search(board, 'JACKET') is False
+    assert boggle_search(board, 'JACK') is True
+    assert boggle_search(board, 'PREP') is False
+    assert boggle_search(board, 'FIRES') is True
+    assert boggle_search(board, 'DFS') is True
+    assert boggle_search(board, 'ROCKS') is True
+    assert boggle_search(board, 'ROCK') is True
+    assert boggle_search(board, 'AXE') is False
+    assert boggle_search(board, 'SEE') is True

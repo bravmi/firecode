@@ -15,4 +15,4 @@ def test1():
 
 def test2():
     tree = BinaryTree()
-    assert tree.find_max(None) == None
+    assert tree.find_max(None) is None

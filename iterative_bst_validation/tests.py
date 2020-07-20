@@ -10,7 +10,7 @@ def test1():
     node20 = TreeNode(20, node15, node30)
 
     tree = BinaryTree(node20)
-    assert tree.validate_BST_Itr(tree.root) == True
+    assert tree.validate_BST_Itr(tree.root) is True
 
 
 def test2():
@@ -22,7 +22,7 @@ def test2():
     node20 = TreeNode(20, node30, node15)
 
     tree = BinaryTree(node20)
-    assert tree.validate_BST_Itr(tree.root) == False
+    assert tree.validate_BST_Itr(tree.root) is False
 
 
 def test3():
@@ -34,4 +34,4 @@ def test3():
     node20 = TreeNode(20, node15, node40)
 
     tree = BinaryTree(node20)
-    assert tree.validate_BST_Itr(tree.root) == False
+    assert tree.validate_BST_Itr(tree.root) is False

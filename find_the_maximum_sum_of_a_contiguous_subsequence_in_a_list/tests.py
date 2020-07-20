@@ -25,4 +25,4 @@ def test5():
 
 
 def test6():
-    assert largestContinuousSum([]) == None
+    assert largestContinuousSum([]) is None

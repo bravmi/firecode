@@ -15,7 +15,7 @@ def test1():
 
 def test2():
     list_ = SinglyLinkedList()
-    assert list_.find_nth_node_from_end(0) == None
+    assert list_.find_nth_node_from_end(0) is None
 
 
 def test3():
@@ -25,4 +25,4 @@ def test3():
     node1 = Node(1, node2)
 
     list_ = SinglyLinkedList(node1)
-    assert list_.find_nth_node_from_end(-1) == None
+    assert list_.find_nth_node_from_end(-1) is None
