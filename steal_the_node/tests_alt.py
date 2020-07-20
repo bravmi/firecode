@@ -1,4 +1,4 @@
-from .solve0 import *
+from .solve_alt import *
 
 
 def test1():
@@ -18,7 +18,7 @@ def test2():
     node1 = TreeNode(1)
     tree = BinaryTree(node1)
     tree.delete(tree.root, 1)
-    assert tree.level_order() == None
+    assert tree.level_order() is None
 
 
 def test3():

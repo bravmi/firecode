@@ -1,9 +1,9 @@
-import itertools as it
+import re
 
 from firecode.utils import *
 
 
-def decimal(n, d, prec=100):
+def decimal(n, d, prec=28):
     if n * d < 0:
         yield '-'
     n = abs(n)
@@ -25,24 +25,15 @@ def decimal(n, d, prec=100):
 
 def divide(numer, denom):
     """
-    Don't know why it works exactly xD
+    Sort of works ;)
     """
-    dec = decimal(numer, denom)
-    before = list(it.takewhile(lambda c: c != '.', dec))
-
-    after = []
-    hist = {}
-    for c in dec:
-        if c in hist:
-            index = hist[c]
-            recur = ''.join(after[index:])
-            after = after[:index] + ['[{}]'.format(recur)]
-            break
-        else:
-            after.append(c)
-            hist[c] = len(after) - 1
-    ans = before + ['.'] + after if after else before
-    return ''.join(ans)
+    f = decimal(numer, denom)
+    s = ''.join(f)
+    for i in range(len(s)):
+        m = re.search(r'^(.+?)(?P<suf>[1-9]+)(?P=suf)$', s[:i])
+        if m:
+            return '%s[%s]' % (m.group(1), m.group(2))
+    return s
 
 
 if __name__ == '__main__':

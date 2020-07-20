@@ -1,39 +1,32 @@
+import itertools as it
+
 from firecode.utils import *
 
 
 def find_spiral(A):
+    A = [row[:] for row in A]
     n, m = len(A), len(A[0])
     if not n or not m:
         return []
+    directions = it.cycle([[0, 1], [1, 0], [0, -1], [-1, 0]])
 
-    spiral = []
-    min_i, max_i, min_j, max_j = 0, n - 1, 0, m - 1
-    while True:
-        # right
-        for j in range(min_j, max_j + 1):
-            spiral.append(A[min_i][j])
-        min_i += 1
-        if min_i > max_i:
-            break
-        # down
-        for i in range(min_i, max_i + 1):
-            spiral.append(A[i][max_j])
-        max_j -= 1
-        if max_j < min_j:
-            break
-        # left
-        for j in range(max_j, min_j - 1, -1):
-            spiral.append(A[max_i][j])
-        max_i -= 1
-        if max_i < min_i:
-            break
-        # up
-        for i in range(max_i, min_i - 1, -1):
-            spiral.append(A[i][min_j])
-        min_j += 1
-        if min_j > max_j:
-            break
-
+    i, j = 0, 0
+    spiral = [A[0][0]]
+    A[0][0] = None
+    di, dj = next(directions)
+    cells = 1
+    while cells < n * m:
+        if not (0 <= i + di <= n - 1) or not (0 <= j + dj <= m - 1):
+            di, dj = next(directions)
+            continue
+        if A[i + di][j + dj] is None:
+            di, dj = next(directions)
+            continue
+        i += di
+        j += dj
+        spiral.append(A[i][j])
+        A[i][j] = None
+        cells += 1
     return spiral
 
 

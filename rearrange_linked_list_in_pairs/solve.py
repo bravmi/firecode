@@ -10,39 +10,25 @@ class SinglyLinkedList:
     def setHead(self, head):
         self.head = head
 
-    def cut_second_half(self):
-        slow = self.head
-        fast = self.head
-        while fast and fast.next and fast.next.next:
-            slow = slow.next
-            fast = fast.next.next
-        second_head = slow.next
-        slow.next = None
-        return second_head
-
     def arrange_in_pairs(self):
         """
-        O(n) time, O(1) space
-        split-reverse-merge
+        O(n) time, O(n) space
+        straightforward approach
         """
-        if not self.head or not self.head.next:
-            return
+        arr = self.to_list()
 
-        second_head = self.cut_second_half()
+        curr = None
+        i, j = 0, len(arr) - 1
+        while i < j:
+            curr = Node(arr[i], curr)
+            curr = Node(arr[j], curr)
+            i += 1
+            j -= 1
+        if i == j:
+            curr = Node(arr[i], curr)
+        self.head = curr
 
-        l2 = SinglyLinkedList(second_head)
-        l2.reverse()
-        second_head = l2.head
-
-        # merge
-        node1 = self.head
-        node2 = second_head
-        while node2:
-            # node1.next, node2.next, node1, node2
-            # = node2, node1.next, node1.next, node2.next
-            next1, next2 = node1.next, node2.next
-            node1.next, node2.next = node2, next1
-            node1, node2 = next1, next2
+        self.reverse()
 
     def reverse(self):
         if not self.head or not self.head.next:
@@ -51,7 +37,6 @@ class SinglyLinkedList:
         prev = None
         curr = self.head
         while curr:
-            # curr.next, prev, curr = prev, curr, curr.next
             next_ = curr.next
             curr.next = prev
             prev, curr = curr, next_

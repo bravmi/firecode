@@ -16,16 +16,6 @@ class BinaryTree:
             return root
         return self.find_min(root.left_child)
 
-    def find_min_(self, root):
-        """Returns both its parent and the minimum node itself"""
-        if not root:
-            return None, None
-
-        prev, curr = None, root
-        while curr.left_child:
-            prev, curr = curr, curr.left_child
-        return prev, curr
-
     def delete(self, root, data):
         # Return the new root node of type TreeNode
         self.root = self._delete(root, data)
@@ -37,17 +27,11 @@ class BinaryTree:
 
         if data == root.data:
             if root.left_child and root.right_child:
-                psucc, succ = self.find_min_(root.right_child)
-                # cut the successor
-                if psucc:
-                    psucc.left_child = succ.right_child
-                else:  # the parent is root then
-                    root.right_child = succ.right_child
-                # paste it in place of the root
-                succ.left_child = root.left_child
-                succ.right_child = root.right_child
-                return succ
-
+                succ = self.find_min(root.right_child)
+                root.data = succ.data
+                # straightforward dive to the bottom here
+                root.right_child = self.delete(root.right_child, succ.data)
+                return root
             elif root.left_child:
                 return root.left_child
             elif root.right_child:
