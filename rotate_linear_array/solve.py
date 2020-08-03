@@ -11,7 +11,9 @@ def reverse(a, start, stop):
 
 
 def rotate_left(a, k):
-    """ O(n) time, inplace """
+    """
+    O(n) time, inplace
+    """
     n = len(a)
     k = k % n
     reverse(a, 0, n)
