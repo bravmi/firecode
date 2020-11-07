@@ -1,6 +1,6 @@
 import collections as co
 
-from firecode.utils import *
+from ..utils import *
 
 
 def are_isomorphic(s1, s2):

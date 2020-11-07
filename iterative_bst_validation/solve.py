@@ -1,6 +1,6 @@
 from sys import maxsize as INF
 
-from firecode.utils import *
+from ..utils import *
 
 
 # Collections module has already been imported.

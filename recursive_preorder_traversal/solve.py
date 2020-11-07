@@ -1,4 +1,4 @@
-from firecode.utils import *
+from ..utils import *
 
 pre_ordered_list = []
 

@@ -1,6 +1,6 @@
 import math
 
-from firecode.utils import *
+from ..utils import *
 
 
 class SinglyLinkedList:

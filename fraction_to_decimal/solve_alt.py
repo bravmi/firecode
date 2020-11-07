@@ -1,6 +1,6 @@
 import itertools as it
 
-from firecode.utils import *
+from ..utils import *
 
 
 def decimal(n, d, prec=100):

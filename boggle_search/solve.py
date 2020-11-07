@@ -1,4 +1,4 @@
-from firecode.utils import *
+from ..utils import *
 
 
 def neighbors(x, y):

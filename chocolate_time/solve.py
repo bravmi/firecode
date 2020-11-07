@@ -5,7 +5,7 @@ https://www.hackerrank.com/challenges/candies/editorial
 
 from sys import maxsize as INF
 
-from firecode.utils import *
+from ..utils import *
 
 
 def distributeChocolateBrute(points):

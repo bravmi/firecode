@@ -1,6 +1,6 @@
 import itertools as it
 
-from firecode.utils import *
+from ..utils import *
 
 
 def find_largest_square(A):

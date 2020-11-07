@@ -1,6 +1,6 @@
 import string
 
-from firecode.utils import *
+from ..utils import *
 
 DIGITS = string.ascii_uppercase
 

@@ -1,4 +1,4 @@
-from firecode.utils import *
+from ..utils import *
 
 
 def generate_pascal_triangle(num_rows):

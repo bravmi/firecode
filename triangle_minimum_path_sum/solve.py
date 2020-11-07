@@ -1,4 +1,4 @@
-from firecode.utils import *
+from ..utils import *
 
 
 def min_triangle_depth(tri):

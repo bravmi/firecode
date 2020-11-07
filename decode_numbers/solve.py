@@ -1,7 +1,7 @@
 import itertools as it
 import string
 
-from firecode.utils import *
+from ..utils import *
 
 
 def decode_string(msg):

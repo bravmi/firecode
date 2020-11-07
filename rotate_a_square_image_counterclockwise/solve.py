@@ -1,4 +1,4 @@
-from firecode.utils import *
+from ..utils import *
 
 
 def rotate_square_image_ccw_hack(A):

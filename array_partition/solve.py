@@ -1,4 +1,4 @@
-from firecode.utils import *
+from ..utils import *
 
 
 def range_format(r):

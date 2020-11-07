@@ -1,4 +1,4 @@
-from firecode.utils import *
+from ..utils import *
 
 
 def binary_search(a_list, item):

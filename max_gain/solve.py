@@ -1,6 +1,6 @@
 import sys
 
-from firecode.utils import *
+from ..utils import *
 
 
 def max_gain(input_list):

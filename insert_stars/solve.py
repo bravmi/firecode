@@ -1,4 +1,4 @@
-from firecode.utils import *
+from ..utils import *
 
 
 def insert_star_between_pairs0(s):
